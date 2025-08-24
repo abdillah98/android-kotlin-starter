@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Android APK (Debug)",
+      "type": "shell",
+      "command": "./gradlew assembleDebug",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Install APK to Device (via ADB)",
+      "type": "shell",
+      "command": "adb install -r app/build/outputs/apk/debug/app-debug.apk",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build & Install APK (One Click)",
+      "type": "shell",
+      "command": "./gradlew assembleDebug && adb install -r app/build/outputs/apk/debug/app-debug.apk",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

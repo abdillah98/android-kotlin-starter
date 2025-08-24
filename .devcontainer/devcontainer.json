@@ -1,20 +1,30 @@
 {
   "name": "Android Kotlin Dev",
-  "image": "mcr.microsoft.com/devcontainers/java:17",
-  "features": {
-    "ghcr.io/devcontainers/features/android-sdk:1": {
-      "version": "commandlinetools-latest"
-    }
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "sdkmanager --licenses && ./gradlew build",
   "customizations": {
     "vscode": {
       "extensions": [
         "fwcd.kotlin",
-        "ms-vscode.cpptools",
         "vscjava.vscode-java-pack",
-        "redhat.vscode-xml"
-      ]
+        "redhat.vscode-xml",
+        "richardwillis.vscode-gradle",
+        "webbukkit.adb-extension"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay",
+        "java.configuration.checkProjectSettingsExclusions": false,
+        // Hilangkan warning & sembunyikan metadata
+        "java.import.generatesMetadataFilesAtProjectRoot": true,
+        "files.exclude": {
+          "**/.classpath": true,
+          "**/.project": true,
+          "**/.settings": true,
+          "**/.factorypath": true
+        }
+      }
     }
   }
 }

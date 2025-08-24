@@ -1,0 +1,20 @@
+{
+  "name": "Android Kotlin Dev",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/android-sdk:1": {
+      "version": "commandlinetools-latest"
+    }
+  },
+  "postCreateCommand": "sdkmanager --licenses && ./gradlew build",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "ms-vscode.cpptools",
+        "vscjava.vscode-java-pack",
+        "redhat.vscode-xml"
+      ]
+    }
+  }
+}
